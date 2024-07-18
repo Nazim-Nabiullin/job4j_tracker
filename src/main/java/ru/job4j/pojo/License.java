@@ -37,7 +37,7 @@ public class License {
         this.owner = owner;
     }
 
-    public  String getModel() {
+    public String getModel() {
         return model;
     }
 
