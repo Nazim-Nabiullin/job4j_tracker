@@ -6,6 +6,11 @@ public class Product {
     private String name;
     private int count;
 
+    public Product(String name, int count) {
+        this.name = name;
+        this.count = count;
+    }
+
     @Override
     public boolean equals(Object object) {
         if (this == object) {
@@ -15,17 +20,13 @@ public class Product {
             return false;
         }
         Product product = (Product) object;
-        return count == product.count && Objects.equals(name, product.name);
+        return count == product.count
+                && Objects.equals(name, product.name);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name, count);
-    }
-
-    public Product(String name, int count) {
-        this.name = name;
-        this.count = count;
     }
 
     public String getName() {
