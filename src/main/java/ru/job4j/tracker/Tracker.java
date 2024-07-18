@@ -50,15 +50,6 @@ public class Tracker {
     public Item findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items[index] : null;
-/*        Item rsl = null;
-        for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
-                break;
-            }
-        }
-        return rsl;*/
     }
 
     private int indexOf(int id) {
