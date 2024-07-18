@@ -13,16 +13,6 @@ public class Tracker {
         return item;
     }
 
-    public boolean replace(int id, Item item) {
-        boolean trueReplace = false;
-        int index = indexOf(id);
-        if (index != -1) {
-            items[index] = item;
-            trueReplace = true;
-        }
-        return trueReplace;
-    }
-
     public Item[] findAll() {
         return Arrays.copyOf(items, size);
     }
@@ -54,5 +44,16 @@ public class Tracker {
             }
         }
         return result;
+    }
+
+    public boolean replace(int id, Item item) {
+        boolean trueReplace = false;
+        int index = indexOf(id);
+        if (index != -1) {
+            item.setId(index);
+            items[index].setName(item.getName());
+            trueReplace = true;
+        }
+        return trueReplace;
     }
 }
