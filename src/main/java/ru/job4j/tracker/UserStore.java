@@ -6,6 +6,7 @@ public class UserStore {
         String greeting = "Hello " + user;
         System.out.println(greeting);
         System.out.println();
+
         System.out.println("User: "
         + user.getId() + " "
         + user.getUsername() + " "
