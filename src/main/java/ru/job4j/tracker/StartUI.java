@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import org.w3c.dom.ls.LSOutput;
 
 import javax.swing.*;
+import javax.swing.plaf.synth.SynthRadioButtonMenuItemUI;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -13,11 +14,6 @@ public class StartUI {
             showMenu();
             System.out.print("Выбрать: ");
             int select = Integer.parseInt(scanner.nextLine());
-            if (select != 6) {
-                System.out.println("Пользователь выбрал: " + select);
-            } else {
-                run = false;
-            }
             if (select == 0) {
                 System.out.println("=== Создание новой заявки ===");
                 System.out.print("Введите имя: ");
@@ -34,6 +30,18 @@ public class StartUI {
                     }
                 } else {
                     System.out.println("Хранилище еще не содержит заявок");
+                }
+            } else if (select == 2) {
+                System.out.println("=== Редактирование заявки ===");
+                System.out.println("Введите id: ");
+                int id = Integer.parseInt(scanner.nextLine());
+                System.out.println("Введите имя: ");
+                String name = scanner.nextLine();
+                Item item = new Item(name);
+                if (tracker.replace(id, item)) {
+                    System.out.println("Заявка изменена успешно.");
+                } else {
+                    System.out.println("Ошибка замены заявки.");
                 }
             } else if (select == 6) {
                 run = false;
