@@ -1,5 +1,8 @@
 package ru.job4j.tracker;
 
+import org.w3c.dom.ls.LSOutput;
+
+import javax.swing.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -22,6 +25,16 @@ public class StartUI {
                 Item item = new Item(name);
                 tracker.add(item);
                 System.out.println("Добавленная заявка: " + item);
+            } else if (select == 1) {
+                System.out.println("=== Вывод всех заявок ===");
+                Item[] items = tracker.findAll();
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Хранилище еще не содержит заявок");
+                }
             } else if (select == 6) {
                 run = false;
             }
