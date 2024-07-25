@@ -1,9 +1,9 @@
 package ru.job4j.polymorphism;
 
 public interface Transport {
-    void drive();
+    void move();
 
     void passenger(int busPassenger);
 
-    int fillUp(int amounOfFuel);
+    int refuel(int fuel);
 }
