@@ -16,6 +16,21 @@ public class FindEl {
 
     }
 
+    public static boolean sent(String value, String[] abuses) throws ElementAbuseException {
+        return true;
+    }
+
+    public static void process(String[] values, String key, String[] abuse) {
+        try {
+            if (indexOf(values, key) != -1) {
+                sent(key, abuse);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+    }
+
     public static void main(String[] args) {
         try {
             String[] array = {"one", "two", "three"};
