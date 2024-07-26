@@ -17,7 +17,7 @@ public class CountTest {
     }
 
     @Test
-    public void whenException3() {
+    public void whenException2() {
         int start = 0;
         int finish = 3;
         int expected = 3;
