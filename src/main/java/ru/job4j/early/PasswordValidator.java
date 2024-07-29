@@ -20,6 +20,7 @@ public class PasswordValidator {
         boolean hasDigit = false;
         boolean hasSpecial = false;
         for (char symbol : password.toCharArray()) {
+
             if (Character.isUpperCase(symbol)) {
                 hasUpCase = true;
             }
@@ -32,7 +33,7 @@ public class PasswordValidator {
             if (!Character.isLetterOrDigit(symbol)) {
                 hasSpecial = true;
             }
-            if (hasUpCase == hasLowCase == hasDigit == hasSpecial) {
+            if (hasUpCase && hasLowCase && hasDigit && hasSpecial) {
                 break;
             }
         }
